@@ -1,0 +1,37 @@
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+<!-- Main Site -->
+<main>
+  <div class="indexTopBar">
+    <img src="img/SE-GitHub-image.png" alt="A huskie" />
+    <h1>Habits of Mind Journal</h1>
+    <label>
+      Filter
+      <input type="text" class="homFilter" />
+    </label>
+    <a href="/createEntry" role="button">Create Entry</a>
+  </div>
+
+  <div class="entries">
+    <% for (let entry of entries) { %> <% if (entry.habit == filter || filter ==
+    "") { %>
+    <div class="entry">
+      <div><%= entry.date %></div>
+      <div class="entryHabit"><%= entry.habit %></div>
+      <div class="entryContent"><%= entry.content %></div>
+      <div>
+        <a href="/editEntry/<%= entry.id %>" role="button" class="secondary"
+          >Edit Entry</a
+        >
+      </div>
+    </div>
+    <% } %> <% } %>
+  </div>
+</main>
+<!-- /Main Site -->
+<script src="js/index.js"></script>
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->
