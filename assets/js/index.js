@@ -3,8 +3,10 @@
  *  (primarily event handlers to fetch data from the Node server)
  */
 
-const dropdown = document.getElementById("filter");
+const textbox = document.querySelector("input.homFilter");
 
-dropdown.addEventListener("change", () => {
-  window.location = `/?hom=${dropdown.value}`;
+textbox.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    window.location = `/?filter=${textbox.value}`;
+  }
 });

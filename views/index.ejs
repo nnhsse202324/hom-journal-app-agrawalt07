@@ -8,15 +8,8 @@
     <img src="img/SE-GitHub-image.png" alt="A huskie" />
     <h1>Habits of Mind Journal</h1>
     <label>
-      Habit of Mind Filter
-      <select name="Habit of Mind" id="filter">
-        <option value=""></option>
-        <% for (const habit of habits) { %> <% if (habit == filter) { %>
-        <option value="<%= habit %>" selected><%= habit %></option>
-        <% } else { %>
-        <option value="<%= habit %>"><%= habit %></option>
-        <% } %> <% } %>
-      </select>
+      Filter
+      <input type="text" class="homFilter" />
     </label>
     <a href="/createEntry" role="button">Create Entry</a>
   </div>
@@ -30,7 +23,7 @@
       <div class="entryContent"><%= entry.content %></div>
       <div>
         <a href="/editEntry/<%= entry.id %>" role="button" class="secondary"
-          >Edit</a
+          >Edit Entry</a
         >
       </div>
     </div>

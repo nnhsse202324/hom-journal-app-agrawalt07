@@ -27,7 +27,7 @@ route.get("/", async (req, res) => {
     };
   });
 
-  const filter = req.query.hom === undefined ? "" : req.query.hom;
+  const filter = req.query.filter;
 
   // The response parameter references the HTTP response object
   res.render("index", {
